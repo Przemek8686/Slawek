@@ -34,10 +34,11 @@ const Title = styled.h1`
   background: linear-gradient(177deg, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 35%, rgba(0,212,255,1) 100%);
   width: 100%;
   height: 50px; /* Adjust height as needed */
-  margin: 0;
+ margin-top:0px;
   padding: 20px; /* Adjust padding as needed */
   position: absolute;
   top: 0;
+  margin-bottom:40px;
 `;
 
 const Logo = styled.img` height: 100px; /* Adjust size as needed */ 
@@ -88,6 +89,7 @@ const CompanyName1 = styled.span`
   }
 `;
 
+
 const Section = styled.div`
   background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
   padding: 20px;
@@ -95,7 +97,21 @@ const Section = styled.div`
   width: 80%;
   max-width: 800px;
   margin-top: 120px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
+ 
+
+  @media (max-width: 480px) {
+ 
+  max-hight:20%
+  
+
+  @media (max-width: 375px) {
+    width: 90%; /* Use most of the screen width */
+    padding: 15px; /* Reduced padding for smaller screens */
+    font-size: 0.85em; /* Slightly smaller font for compactness */
+    border-radius: 8px; /* Maintain a rounded appearance */
+    margin-top: 50px;
+}
 `;
 
 const Section1 = styled.div`
@@ -104,24 +120,49 @@ const Section1 = styled.div`
   border-radius: 10px;
   width: 80%;
   max-width: 800px;
-  margin-top: 30px;
-  margin-bottom: 0px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+ 
+
+  @media (max-width: 480px) {
+ 
+  max-hight:20%
+  
+
+  @media (max-width: 375px) {
+    width: 90%; /* Use most of the screen width */
+    padding: 15px; /* Reduced padding for smaller screens */
+    font-size: 0.85em; /* Slightly smaller font for compactness */
+    border-radius: 8px; /* Maintain a rounded appearance */
+    margin-top: 50px;
+}
 `;
+
+
 
 const SubTitle = styled.h2`
   font-size: 1.5em;
   color: #0078d4;
   margin: 0px;
+   @media (max-width: 480px) {
+   font-size:1.0em;
+}
 `;
 
 const Text = styled.p`
   font-size: 1em;
   color: #333;
+     @media (max-width: 480px) {
+   font-size:0.7em;
+}
 `;
 
 const ContactItem = styled.p`
   font-size: 1em;
   color: #333;
+     @media (max-width: 480px) {
+   font-size:0.7em;
+}
 `;
 
 const Footer = styled.footer`
@@ -151,6 +192,7 @@ function App() {
         
        
       </Title>
+      
       <Section>
         <SubTitle>Over het Bedrijf</SubTitle>
         <Text>
@@ -169,6 +211,7 @@ function App() {
         <ContactItem>Telefon: +48 123 456 789</ContactItem>
         <ContactItem>Email: info@scbouwmax.pl</ContactItem>
       </Section1>
+      
       <Footer>
         website gemaakt door: Przemyslaw Krawczynski | Email: 1986krawiec1986@gmail.com
       </Footer>
