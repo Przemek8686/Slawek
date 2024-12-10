@@ -1,4 +1,5 @@
 import React from "react";
+import GlobalStyle from "./GlobalStyle";
 import styled from "styled-components";
 import backgroundVideo from './public/Image/Tlo.mp4'; // Update with the correct path to your video file
 import companyLogo from './public/Image/Logo.png'; // Update with the correct path to your logo file
@@ -9,9 +10,23 @@ const Container = styled.div`
   align-items: center;
   padding: 0; /* Remove padding to prevent overflow */
   position: relative;
-  overflow: hidden; /* Hide unnecessary scrollbars */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: auto; /* Enable vertical scrolling */
   width: 100%;
   height: 100vh; /* Full viewport height */
+
+  @media (max-width: 400px) {
+    height: auto; /* Allow height to adjust based on content */
+    min-height: 100vh; /* Ensure at least the full viewport height */
+    padding-bottom: 20px; /* Add space at the bottom for content */
+  }
+
+  @media (max-width: 275px) {
+    height: auto; /* Allow height to adjust */
+    min-height: 100vh; /* Ensure full viewport height as a minimum */
+    padding: 10px; /* Add some padding for better appearance */
+    padding-bottom: 30px; /* Ensure scrollable space at the bottom */
+  }
 `;
 
 const BackgroundVideo = styled.video`
@@ -19,9 +34,20 @@ const BackgroundVideo = styled.video`
   top: 0;
   left: 0;
   width: 100%;
-  height: 90%;
+  height: 100%;
   object-fit: cover;
   z-index: -1;
+
+  @media (max-width: 400px) {
+    height: auto; /* Allow height to adjust */
+    min-height: 100vh; /* Ensure video covers at least full viewport */
+  }
+
+  @media (max-width: 275px) {
+    height: auto; /* Allow height to adapt */
+    min-height: 100vh; /* Ensure the video remains visible in smaller resolutions */
+    object-fit: fill; /* Adjust fit for ultra-small screens to cover the area */
+  }
 `;
 
 const Title = styled.h1`
@@ -33,7 +59,7 @@ const Title = styled.h1`
   background: rgb(2,0,36);
   background: linear-gradient(177deg, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 35%, rgba(0,212,255,1) 100%);
   width: 100%;
-  height: 50px; /* Adjust height as needed */
+  height: 80px; /* Adjust height as needed */
  margin-top:0px;
   padding: 20px; /* Adjust padding as needed */
   position: absolute;
@@ -96,8 +122,8 @@ const Section = styled.div`
   border-radius: 10px;
   width: 80%;
   max-width: 800px;
-  margin-top: 120px;
-  margin-bottom: 10px;
+  margin-top: 140px;
+  margin-bottom: 50px;
  
 
   @media (max-width: 480px) {
@@ -121,7 +147,7 @@ const Section1 = styled.div`
   width: 80%;
   max-width: 800px;
   margin-top: 20px;
-  margin-bottom: 4px;
+  margin-bottom: 50px;
  
 
   @media (max-width: 480px) {
@@ -173,12 +199,14 @@ background: rgb(2,0,36);
   padding: 5px;
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   font-size:10px
 `;
 
 function App() {
   return (
+    <>
+    <GlobalStyle />
     <Container>
       <BackgroundVideo autoPlay loop muted>
         <source src={backgroundVideo} type="video/mp4" />
@@ -216,6 +244,7 @@ function App() {
         website gemaakt door: Przemyslaw Krawczynski | Email: 1986krawiec1986@gmail.com
       </Footer>
     </Container>
+    </>
   );
 }
 
