@@ -39,12 +39,12 @@ const BackgroundVideo = styled.video`
   z-index: -1;
 
   @media (max-width: 400px) {
-    height: auto; /* Allow height to adjust */
+    /* Allow height to adjust */
     min-height: 100vh; /* Ensure video covers at least full viewport */
   }
 
   @media (max-width: 275px) {
-    height: auto; /* Allow height to adapt */
+     /* Allow height to adapt */
     min-height: 100vh; /* Ensure the video remains visible in smaller resolutions */
     object-fit: fill; /* Adjust fit for ultra-small screens to cover the area */
   }
