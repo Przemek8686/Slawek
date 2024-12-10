@@ -109,7 +109,7 @@ const CompanyName1 = styled.span`
   }
 
   @media (max-width: 480px) {
-    font-size: 0.3em; /* Adjust for phones */
+    font-size: 0.23em; /* Adjust for phones */
     margin-left: 5px;
 
   }
@@ -123,7 +123,7 @@ const Section = styled.div`
   width: 80%;
   max-width: 800px;
   margin-top: 140px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
  
 
   @media (max-width: 480px) {
@@ -147,7 +147,7 @@ const Section1 = styled.div`
   width: 80%;
   max-width: 800px;
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
  
 
   @media (max-width: 480px) {
@@ -199,8 +199,15 @@ background: rgb(2,0,36);
   padding: 5px;
   width: 100%;
   position: absolute;
-  bottom: 0px;
-  font-size:10px
+  bottom: 1px;
+  font-size:10px;
+  
+  @media (max-width: 400px) {
+  margin-bottom:0px;
+  font-size:5px;
+margin-top:10px;
+   }
+
 `;
 
 function App() {
