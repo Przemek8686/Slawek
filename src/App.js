@@ -11,7 +11,7 @@ const Container = styled.div`
   padding: 0; /* Remove padding to prevent overflow */
   position: relative;
   overflow-x: hidden; /* Prevent horizontal scroll */
-  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-y: none; /* Enable vertical scrolling */
   width: 100%;
   height: 100vh; /* Full viewport height */
 
