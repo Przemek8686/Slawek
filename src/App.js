@@ -50,6 +50,7 @@ padding-left: 10px; }
 @media (max-width: 480px) { height: 90px; /* Adjust for phones */ 
 padding-left: 5px; } `;
 
+
 const CompanyName = styled.span`
   margin-right: 10px; /* Space between company name and styled components text */
   color: white;
@@ -73,7 +74,7 @@ const CompanyName1 = styled.span`
   font-size: 0.5em; /* Smaller font size */
   font-style: italic; /* Italic font style */
   margin-top: 8px;
-  margin-left: 40px;
+  margin-left: 125px;
 
   @media (max-width: 768px) {
     font-size: 0.4em; /* Adjust for tablets */
@@ -144,8 +145,11 @@ function App() {
       </BackgroundVideo>
       <Title>
         <Logo src={companyLogo} alt="Company Logo" />
-        <CompanyName>SC Bouwmax</CompanyName>
-        <CompanyName1>Kunstof Kozijn gemonteerd met precisie - comfort voor jaren!</CompanyName1>
+        
+           <CompanyName>SC Bouwmax</CompanyName>
+          <CompanyName1>Kunstof Kozijn gemonteerd met precisie - comfort voor jaren!</CompanyName1>
+        
+       
       </Title>
       <Section>
         <SubTitle>Over het Bedrijf</SubTitle>
