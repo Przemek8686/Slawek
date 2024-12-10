@@ -203,7 +203,7 @@ background: rgb(2,0,36);
   font-size:10px;
   
   @media (max-width: 400px) {
-  margin-bottom:50px;
+  margin-bottom:60px;
   font-size:5px;
 margin-top:10px;
    }
