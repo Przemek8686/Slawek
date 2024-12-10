@@ -59,7 +59,7 @@ const Title = styled.h1`
   background: rgb(2,0,36);
   background: linear-gradient(177deg, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 35%, rgba(0,212,255,1) 100%);
   width: 100%;
-  height: 80px; /* Adjust height as needed */
+  height: 90px; /* Adjust height as needed */
  margin-top:0px;
   padding: 20px; /* Adjust padding as needed */
   position: absolute;
@@ -203,7 +203,7 @@ background: rgb(2,0,36);
   font-size:10px;
   
   @media (max-width: 400px) {
-  margin-bottom:8px;
+  margin-bottom:50px;
   font-size:5px;
 margin-top:10px;
    }
