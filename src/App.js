@@ -40,26 +40,51 @@ const Title = styled.h1`
   top: 0;
 `;
 
-const Logo = styled.img`
-  height: 110px; /* Adjust size as needed */
-  width: auto;
-  margin-right: 10px; /* Space between logo and title text */
-  padding-left: 40px;
-`;
+const Logo = styled.img` height: 100px; /* Adjust size as needed */ 
+width: auto; margin-right: 10px; /* Space between logo and title text */ 
+padding-left: 40px;
+
+@media (max-width: 768px) { height: 90px; /* Adjust for tablets */ 
+padding-left: 10px; } 
+
+@media (max-width: 480px) { height: 90px; /* Adjust for phones */ 
+padding-left: 5px; } `;
 
 const CompanyName = styled.span`
   margin-right: 10px; /* Space between company name and styled components text */
   color: white;
-  margin-left:180px;
+  margin-left: 180px;
+  white-space: nowrap;
+
+  @media (max-width: 768px) {
+    margin-left: 180px; /* Adjust for tablets */
+    font-size: 0.9em; /* Adjust font size for tablets */
+  }
+
+  @media (max-width: 480px) {
+    margin-left: 5px; /* Adjust for phones */
+    font-size: 0.6em; /* Adjust font size for phones */
+  }
 `;
 
 const CompanyName1 = styled.span`
   margin-right: 10px; /* Space between company name and styled components text */
   color: white;
-  font-size: 0.6em; /* Smaller font size */
+  font-size: 0.5em; /* Smaller font size */
   font-style: italic; /* Italic font style */
-  margin-top:8px;
-  margin-left:40px;
+  margin-top: 8px;
+  margin-left: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 0.4em; /* Adjust for tablets */
+    margin-left: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.3em; /* Adjust for phones */
+    margin-left: 5px;
+
+  }
 `;
 
 const Section = styled.div`
@@ -107,7 +132,7 @@ background: rgb(2,0,36);
   width: 100%;
   position: absolute;
   bottom: 0;
-  font-size:10px;
+  font-size:10px
 `;
 
 function App() {
@@ -141,7 +166,7 @@ function App() {
         <ContactItem>Email: info@scbouwmax.pl</ContactItem>
       </Section1>
       <Footer>
-      website gemaakt door: Przemyslaw Krawczynski | Email: 1986krawiec1986@gmail.com
+        website gemaakt door: Przemyslaw Krawczynski | Email: 1986krawiec1986@gmail.com
       </Footer>
     </Container>
   );
