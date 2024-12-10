@@ -123,7 +123,7 @@ const Section = styled.div`
   width: 80%;
   max-width: 800px;
   margin-top: 140px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
  
 
   @media (max-width: 480px) {
@@ -147,7 +147,7 @@ const Section1 = styled.div`
   width: 80%;
   max-width: 800px;
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
  
 
   @media (max-width: 480px) {
