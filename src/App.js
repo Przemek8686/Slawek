@@ -165,6 +165,7 @@ const SubTitle = styled.h2`
   font-size: 1.5em;
   color: #0078d4;
   margin: 0px;
+  margin-bottom:10px;
 
   @media (max-width: 480px) {
     font-size: 1em;
