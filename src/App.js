@@ -45,8 +45,8 @@ const Title = styled.h1`
   color: #0078d4;
   background: linear-gradient(177deg, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 35%, rgba(0,212,255,1) 100%);
   width: 100%;
-  height: auto;
-  padding: 20px;
+  height:auto;
+  padding: 5px;
   position: absolute;
   top: 0;
   flex-wrap: nowrap;
@@ -106,6 +106,7 @@ const CompanyText = styled.span`
   font-size: 0.9em;
   font-family: Brush Script MT, Brush Script Std, cursive;
   margin-left: auto;
+ 
   text-align: right;
   flex-grow: 1;
   overflow-wrap: break-word;
@@ -129,8 +130,8 @@ const Section = styled.div`
   border-radius: 10px;
   width: 80%;
   max-width: 800px;
-  margin-top: 200px;
-  margin-bottom: 30px;
+  margin-top: 105px;
+  margin-bottom: 20px;
   animation: ${slideInFromLeft} 1.5s ease-out;
   animation-fill-mode: forwards;
   opacity: 0;
@@ -150,25 +151,50 @@ const Section = styled.div`
 `;
 
 const Section1 = styled(Section)`
-  margin-top: 20px;
+  margin-top: 2px;
   animation-delay: 0.5s;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);  // Cień po prawej i w prawym dolnym rogu
 `;
 
 const Section1Delayed = styled(Section)`
-  margin-top: 20px;
+  margin-top: 1px;
   animation-delay: 1s;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);  // Cień po prawej i w prawym dolnym rogu
 `;
 
 const SubTitle = styled.h2`
-  font-size: 1.5em;
+  font-size: 1.3em;
   color: #0078d4;
   margin: 0px;
   margin-bottom:10px;
 
   @media (max-width: 480px) {
     font-size: 1em;
+  }
+`;
+
+const StyledList = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  margin-top:15px;
+`;
+
+const StyledListItem = styled.div`
+  position: relative;
+  padding-left: 1.5em; /* Space for the dot */
+  margin-bottom: 0.8em;
+  font-size:0.8em;
+ 
+
+  &::before {
+    content: "•"; /* Add dot before each item */
+    position: absolute;
+    left: 0;
+    color: #0078d4; /* Customize the color of the dot */
+    font-size: 1.2em; /* Size of the dot */
+    line-height: 1em;
   }
 `;
 
@@ -189,6 +215,20 @@ const ContactItem = styled.p`
     font-size: 0.7em;
   }
 `;
+const PhoneLink = styled.a`
+  text-decoration: none;
+  color: blue; /* Domyślny kolor niebieski */
+  font-size: 1em;
+  transition: color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    transform: scale1.6); /* Delikatne powiększenie */
+  }
+
+  &:active {
+    color: red; /* Kolor czerwony po kliknięciu */
+  }
+`;
 
 const Footer = styled.footer`
   background: linear-gradient(177deg, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 35%, rgba(0,212,255,1) 100%);
@@ -207,7 +247,7 @@ const Footer = styled.footer`
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);  // Cień tekstu
 
   @media (max-width: 400px) {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     font-size: 5px;
     margin-top: 10px;
   }
@@ -230,21 +270,33 @@ function App() {
         <Section className="animate">
           <SubTitle>Over het Bedrijf</SubTitle>
           <Text>
-            SC Bouwmax to firma specjalizująca się w profesjonalnym montażu okien w domach.
+            Wij leveren en plaatsen kunststof kozijnen van de hoogste kwaliteit tegen de scherpste prijs door heel Nederland.
+            <StyledList>
+              <StyledListItem>Kunststof kozijnen</StyledListItem>
+              <StyledListItem>Kunststof deuren</StyledListItem>
+              <StyledListItem>Kunststof schuifpuien</StyledListItem>
+              <StyledListItem>Kunststof dakkapellen</StyledListItem>
+              <StyledListItem>Kunststof boeibeplating</StyledListItem>
+              <StyledListItem>Keralit</StyledListItem>
+            </StyledList>
           </Text>
         </Section>
         <Section1 className="animate">
           <SubTitle>Onze diensten</SubTitle>
           <Text>
-            Oferujemy szeroki zakres usług związanych z montażem okien.
+            Interesse om kunststof kozijnen te laten plaatsen door de spezialisten van SC Bouwmax? Het
+            is dan heel eenvoudig om een offerte aan te vragen.
           </Text>
         </Section1>
         <Section1Delayed className="animate">
           <SubTitle>Contactgegevens</SubTitle>
-          <ContactItem>Adres: ul. Przykładowa 123, 00-000 Miasto</ContactItem>
-          <ContactItem>Telefon: +48 123 456 789</ContactItem>
-          <ContactItem>Email: info@scbouwmax.pl</ContactItem>
-          <ContactItem>KvK: 11111111111</ContactItem>
+          <ContactItem>SC Bouwmax</ContactItem>
+          <ContactItem> Telefoonnummer:  <PhoneLink href="tel:+31611434308">
+            +31(0)611434308
+          </PhoneLink>
+          </ContactItem>
+          <ContactItem>Email: Bouwmax@outlook.com </ContactItem>
+          <ContactItem>KvK: 92009956</ContactItem>
         </Section1Delayed>
         <Footer>
           website gemaakt door: Przemyslaw Krawczynski | Email: 1986krawiec1986@gmail.com
