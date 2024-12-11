@@ -1,32 +1,30 @@
 import React from "react";
 import GlobalStyle from "./GlobalStyle";
-import styled from "styled-components";
-import backgroundVideo from './public/Image/Tlo.mp4'; // Update with the correct path to your video file
-import companyLogo from './public/Image/Logo.png'; // Update with the correct path to your logo file
+import styled, { keyframes } from "styled-components";
+import backgroundVideo from './public/Image/Tlo.mp4';
+import companyLogo from './public/Image/Logo.png';
+
+// Animacja przesunięcia z lewej strony
+const slideInFromLeft = keyframes`
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0; /* Remove padding to prevent overflow */
+  padding: 0;
   position: relative;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  overflow-y: none; /* Enable vertical scrolling */
+  overflow-x: hidden;
   width: 100%;
-  height: 100vh; /* Full viewport height */
-
-  @media (max-width: 400px) {
-    height: auto; /* Allow height to adjust based on content */
-    min-height: 100vh; /* Ensure at least the full viewport height */
-    padding-bottom: 20px; /* Add space at the bottom for content */
-  }
-
-  @media (max-width: 275px) {
-    height: auto; /* Allow height to adjust */
-    min-height: 100vh; /* Ensure full viewport height as a minimum */
-    padding: 10px; /* Add some padding for better appearance */
-    padding-bottom: 30px; /* Ensure scrollable space at the bottom */
-  }
+  height: 100vh;
 `;
 
 const BackgroundVideo = styled.video`
@@ -37,220 +35,220 @@ const BackgroundVideo = styled.video`
   height: 100%;
   object-fit: cover;
   z-index: -1;
-
-  @media (max-width: 400px) {
-    /* Allow height to adjust */
-    min-height: 100vh; /* Ensure video covers at least full viewport */
-  }
-
-  @media (max-width: 275px) {
-     /* Allow height to adapt */
-    min-height: 100vh; /* Ensure the video remains visible in smaller resolutions */
-    object-fit: fill; /* Adjust fit for ultra-small screens to cover the area */
-  }
 `;
 
 const Title = styled.h1`
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align items to the left */
+  justify-content: space-between;
   font-size: 2em;
   color: #0078d4;
-  background: rgb(2,0,36);
   background: linear-gradient(177deg, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 35%, rgba(0,212,255,1) 100%);
   width: 100%;
-  height: 90px; /* Adjust height as needed */
- margin-top:0px;
-  padding: 20px; /* Adjust padding as needed */
+  height: auto;
+  padding: 20px;
   position: absolute;
   top: 0;
-  margin-bottom:40px;
+  flex-wrap: nowrap;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);  // Cień na dole
+
+  @media (max-width: 768px) {
+    font-size: 1.5em;
+    padding: 10px;
+    justify-content: center;  // Dodaj to, aby lepiej wyśrodkować elementy
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2em;
+    padding: 5px;
+    justify-content: center;  // Dodaj to, aby lepiej wyśrodkować elementy
+  }
 `;
 
-const Logo = styled.img` height: 100px; /* Adjust size as needed */ 
-width: auto; margin-right: 10px; /* Space between logo and title text */ 
-padding-left: 40px;
+const Logo = styled.img`
+  height: 80px;
+  width: auto;
+  margin-right: 10px;
 
-@media (max-width: 768px) { height: 90px; /* Adjust for tablets */ 
-padding-left: 10px; } 
 
-@media (max-width: 480px) { height: 90px; /* Adjust for phones */ 
-padding-left: 5px; } `;
+ 
 
+  @media (max-width: 768px) {
+    height: 60px;
+  }
+
+  @media (max-width: 480px) {
+    height: 50px;
+  }
+`;
 
 const CompanyName = styled.span`
-  margin-right: 10px; /* Space between company name and styled components text */
   color: white;
-  margin-left: 180px;
+  margin-left: 500px;  // Zmniejsz margines, aby element był bliżej środka
+  flex-shrink: 0;
   white-space: nowrap;
+  font-family: 'Poppins', sans-serif;  // Dodanie czcionki Poppins
+  font-weight: 600;  // Grubsza czcionka
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);  // Dodanie efektu cienia
 
   @media (max-width: 768px) {
-    margin-left: 180px; /* Adjust for tablets */
-    font-size: 0.9em; /* Adjust font size for tablets */
+    margin-left: 10px;
+    font-size: 1em;
   }
 
   @media (max-width: 480px) {
-    margin-left: 5px; /* Adjust for phones */
-    font-size: 0.6em; /* Adjust font size for phones */
+    font-size: 0.9em;
   }
 `;
 
-const CompanyName1 = styled.span`
-  margin-right: 10px; /* Space between company name and styled components text */
+const CompanyText = styled.span`
   color: white;
-  font-size: 0.5em; /* Smaller font size */
-  font-style: italic; /* Italic font style */
-  margin-top: 8px;
-  margin-left: 125px;
+  font-size: 0.9em;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  margin-left: auto;
+  text-align: right;
+  flex-grow: 1;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  // Dodanie cienia do tekstu
 
   @media (max-width: 768px) {
-    font-size: 0.4em; /* Adjust for tablets */
-    margin-left: 20px;
+    font-size: 0.8em;
   }
 
   @media (max-width: 480px) {
-    font-size: 0.23em; /* Adjust for phones */
-    margin-left: 5px;
-
+    font-size: 0.6em;
+    margin-left: 16px;
   }
 `;
 
 
 const Section = styled.div`
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
+  background: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 10px;
   width: 80%;
   max-width: 800px;
-  margin-top: 140px;
+  margin-top: 200px;
   margin-bottom: 30px;
- 
+  animation: ${slideInFromLeft} 1.5s ease-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  visibility: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);  // Delikatne obramowanie
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);  // Cień po prawej i w prawym dolnym rogu
 
-  @media (max-width: 480px) {
- 
-  max-hight:20%
-  
+  &.animate {
+    visibility: visible;
+  }
 
   @media (max-width: 375px) {
-    width: 90%; /* Use most of the screen width */
-    padding: 15px; /* Reduced padding for smaller screens */
-    font-size: 0.85em; /* Slightly smaller font for compactness */
-    border-radius: 8px; /* Maintain a rounded appearance */
+    width: 90%;
+    padding: 15px;
     margin-top: 50px;
-}
+  }
 `;
 
-const Section1 = styled.div`
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  max-width: 800px;
+const Section1 = styled(Section)`
   margin-top: 20px;
-  margin-bottom: 30px;
- 
-
-  @media (max-width: 480px) {
- 
-  max-hight:20%
-  
-
-  @media (max-width: 375px) {
-    width: 90%; /* Use most of the screen width */
-    padding: 15px; /* Reduced padding for smaller screens */
-    font-size: 0.85em; /* Slightly smaller font for compactness */
-    border-radius: 8px; /* Maintain a rounded appearance */
-    margin-top: 50px;
-}
+  animation-delay: 0.5s;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);  // Cień po prawej i w prawym dolnym rogu
 `;
 
-
+const Section1Delayed = styled(Section)`
+  margin-top: 20px;
+  animation-delay: 1s;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);  // Cień po prawej i w prawym dolnym rogu
+`;
 
 const SubTitle = styled.h2`
   font-size: 1.5em;
   color: #0078d4;
   margin: 0px;
-   @media (max-width: 480px) {
-   font-size:1.0em;
-}
+
+  @media (max-width: 480px) {
+    font-size: 1em;
+  }
 `;
 
 const Text = styled.p`
   font-size: 1em;
   color: #333;
-     @media (max-width: 480px) {
-   font-size:0.7em;
-}
+
+  @media (max-width: 480px) {
+    font-size: 0.7em;
+  }
 `;
 
 const ContactItem = styled.p`
   font-size: 1em;
   color: #333;
-     @media (max-width: 480px) {
-   font-size:0.7em;
-}
+
+  @media (max-width: 480px) {
+    font-size: 0.7em;
+  }
 `;
 
 const Footer = styled.footer`
-background: rgb(2,0,36);
   background: linear-gradient(177deg, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 35%, rgba(0,212,255,1) 100%);
   color: #fff;
   text-align: center;
   padding: 5px;
   width: 100%;
   position: absolute;
-  bottom: 1px;
-  font-size:10px;
+  bottom: 0;
+  font-size: 10px;
   
-  @media (max-width: 400px) {
-  margin-bottom:60px;
-  font-size:5px;
-margin-top:10px;
-   }
+  /* Cień dla całego Footer (górny i dolny) */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3), 0px -2px 4px rgba(0, 0, 0, 0.2);  // Cień górny i dolny
+  
+  /* Cień dla tekstu */
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);  // Cień tekstu
 
+  @media (max-width: 400px) {
+    margin-bottom: 60px;
+    font-size: 5px;
+    margin-top: 10px;
+  }
 `;
 
 function App() {
   return (
     <>
-    <GlobalStyle />
-    <Container>
-      <BackgroundVideo autoPlay loop muted>
-        <source src={backgroundVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </BackgroundVideo>
-      <Title>
-        <Logo src={companyLogo} alt="Company Logo" />
-        
-           <CompanyName>SC Bouwmax</CompanyName>
-          <CompanyName1>Kunstof Kozijn gemonteerd met precisie - comfort voor jaren!</CompanyName1>
-        
-       
-      </Title>
-      
-      <Section>
-        <SubTitle>Over het Bedrijf</SubTitle>
-        <Text>
-          SC Bouwmax to firma specjalizująca się w profesjonalnym montażu okien w domach. Zajmujemy się instalacją okien wysokiej jakości, zapewniając naszym klientom komfort i bezpieczeństwo.
-        </Text>
-      </Section>
-      <Section1>
-        <SubTitle>Onze diensten</SubTitle>
-        <Text>
-          Oferujemy szeroki zakres usług związanych z montażem okien, w tym: instalacja okien standardowych, okien dachowych, oraz okien energooszczędnych.
-        </Text>
-      </Section1>
-      <Section1>
-        <SubTitle>Contactgegevens</SubTitle>
-        <ContactItem>Adres: ul. Przykładowa 123, 00-000 Miasto</ContactItem>
-        <ContactItem>Telefon: +48 123 456 789</ContactItem>
-        <ContactItem>Email: info@scbouwmax.pl</ContactItem>
-      </Section1>
-      
-      <Footer>
-        website gemaakt door: Przemyslaw Krawczynski | Email: 1986krawiec1986@gmail.com
-      </Footer>
-    </Container>
+      <GlobalStyle />
+      <Container>
+        <BackgroundVideo autoPlay loop muted>
+          <source src={backgroundVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </BackgroundVideo>
+        <Title>
+          <Logo src={companyLogo} alt="Company Logo" />
+          <CompanyName>SC Bouwmax</CompanyName>
+          <CompanyText>Kunstof Kozijn gemonteerd met precisie - comfort voor jaren!</CompanyText>
+        </Title>
+        <Section className="animate">
+          <SubTitle>Over het Bedrijf</SubTitle>
+          <Text>
+            SC Bouwmax to firma specjalizująca się w profesjonalnym montażu okien w domach.
+          </Text>
+        </Section>
+        <Section1 className="animate">
+          <SubTitle>Onze diensten</SubTitle>
+          <Text>
+            Oferujemy szeroki zakres usług związanych z montażem okien.
+          </Text>
+        </Section1>
+        <Section1Delayed className="animate">
+          <SubTitle>Contactgegevens</SubTitle>
+          <ContactItem>Adres: ul. Przykładowa 123, 00-000 Miasto</ContactItem>
+          <ContactItem>Telefon: +48 123 456 789</ContactItem>
+          <ContactItem>Email: info@scbouwmax.pl</ContactItem>
+          <ContactItem>KvK: 11111111111</ContactItem>
+        </Section1Delayed>
+        <Footer>
+          website gemaakt door: Przemyslaw Krawczynski | Email: 1986krawiec1986@gmail.com
+        </Footer>
+      </Container>
     </>
   );
 }
