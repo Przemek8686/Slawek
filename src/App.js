@@ -28,14 +28,14 @@ const Container = styled.div`
 `;
 
 const BackgroundVideo = styled.video`
-  position: fixed; /* Aby wideo znajdowało się w tle */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(100vh - 6px); /* Odjęcie wysokości stopki */
+  height: calc(100vh - 6px); /* Dopasowanie wysokości uwzględniające stopkę */
   object-fit: cover;
   z-index: -1;
-`;
+  `;
 
 const Title = styled.h1`
   display: flex;
@@ -125,7 +125,7 @@ const CompanyText = styled.span`
 
 
 const Section = styled.div`
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.8); /* Transparentne białe tło */
   padding: 20px;
   border-radius: 10px;
   width: 80%;
@@ -136,8 +136,8 @@ const Section = styled.div`
   animation-fill-mode: forwards;
   opacity: 0;
   visibility: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);  // Delikatne obramowanie
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);  // Cień po prawej i w prawym dolnym rogu
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
 
   &.animate {
     visibility: visible;
@@ -149,6 +149,7 @@ const Section = styled.div`
     margin-top: 110px;
   }
 `;
+
 
 const Section1 = styled(Section)`
   margin-top: 2px;
@@ -249,22 +250,18 @@ const Footer = styled.footer`
   background: linear-gradient(177deg, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 35%, rgba(0,212,255,1) 100%);
   color: #fff;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
   width: 100%;
   position: absolute;
   bottom: 0;
+  z-index: 1; /* Ustawienie z-index, aby był nad tłem wideo */
   font-size: 10px;
-  
-  /* Cień dla całego Footer (górny i dolny) */
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3), 0px -2px 4px rgba(0, 0, 0, 0.2);  // Cień górny i dolny
-  
-  /* Cień dla tekstu */
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);  // Cień tekstu
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3), 0px -2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
 
   @media (max-width: 400px) {
-    margin-bottom: 0px;
-    font-size: 5px;
-    margin-top: 10px;
+    font-size: 8px;
+    padding: 5px;
   }
 `;
 
