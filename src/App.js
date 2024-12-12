@@ -27,9 +27,9 @@ const Container = styled.div`
   align-items: center;
   padding: 0;
   position: relative;
-  overflow-x: hidden;
   width: 100%;
   height: 100vh;
+  overflow: hidden;  /* Prevent scrolling */
 `;
 
 const BackgroundVideo = styled.video`
