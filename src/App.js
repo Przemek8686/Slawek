@@ -130,6 +130,7 @@ const CompanyText = styled.span`
 
 
 const Section = styled.div`
+  background: #ffffff; /* Domyślne solidne białe tło */
   background: rgba(255, 255, 255, 0.8); /* Przezroczyste białe tło */
   padding: 20px;
   border-radius: 10px;
@@ -142,23 +143,18 @@ const Section = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
 
+  /* Fallback for unsupported rgba */
   @supports not (background: rgba(255, 255, 255, 0.8)) {
     background-color: #ffffff; /* Solidne białe tło */
-  }
-
-  &.animate {
-    visibility: visible;
-    opacity: 1;
   }
 
   @media (max-width: 375px) {
     width: 90%;
     padding: 15px;
     margin-top: 110px;
-    @supports not (background: rgba(255, 255, 255, 0.8)) {
-    background-color: #ffffff; /* Solidne białe tło */
   }
 `;
+
 const Section1 = styled(Section)`
   margin-top: 2px;
   animation-delay: 0.5s;
