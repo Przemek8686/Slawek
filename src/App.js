@@ -28,11 +28,11 @@ const Container = styled.div`
 `;
 
 const BackgroundVideo = styled.video`
-  position: absolute;
+  position: fixed; /* Aby wideo znajdowało się w tle */
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 6px); /* Odjęcie wysokości stopki */
   object-fit: cover;
   z-index: -1;
 `;
@@ -146,7 +146,7 @@ const Section = styled.div`
   @media (max-width: 375px) {
     width: 90%;
     padding: 15px;
-    margin-top: 150px;
+    margin-top: 110px;
   }
 `;
 
@@ -229,6 +229,21 @@ const PhoneLink = styled.a`
     color: red; /* Kolor czerwony po kliknięciu */
   }
 `;
+const EmailLink = styled.a`
+  text-decoration: none;
+  color: blue; /* Kolor niebieski */
+  font-size: 1em;
+  transition: color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1); /* Powiększenie przy najechaniu */
+  }
+
+  &:active {
+    color: red; /* Kolor czerwony po kliknięciu */
+  }
+`;
+
 
 const Footer = styled.footer`
   background: linear-gradient(177deg, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 35%, rgba(0,212,255,1) 100%);
@@ -291,11 +306,12 @@ function App() {
         <Section1Delayed className="animate">
           <SubTitle>Contactgegevens</SubTitle>
           <ContactItem>SC Bouwmax</ContactItem>
-          <ContactItem> Telefoonnummer:  <PhoneLink href="tel:+31611434308">
-            +31(0)611434308
-          </PhoneLink>
+          <ContactItem>
+            Telefoonnummer: <PhoneLink href="tel:+31611434308">+31(0)611434308</PhoneLink>
           </ContactItem>
-          <ContactItem>Email: Bouwmax@outlook.com </ContactItem>
+          <ContactItem>
+            Email: <EmailLink href="mailto:Bouwmax@outlook.com">Bouwmax@outlook.com</EmailLink>
+          </ContactItem>
           <ContactItem>KvK: 92009956</ContactItem>
         </Section1Delayed>
         <Footer>
