@@ -35,7 +35,7 @@ const BackgroundVideo = styled.video`
   height: calc(100vh - 6px); /* Dopasowanie wysokości uwzględniające stopkę */
   object-fit: cover;
   z-index: -1;
-  `;
+`;
 
 const Title = styled.h1`
   display: flex;
@@ -134,14 +134,10 @@ const Section = styled.div`
   margin-bottom: 20px;
   animation: ${slideInFromLeft} 1.5s ease-out;
   animation-fill-mode: forwards;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1; /* Upewnij się, że opacity jest ustawione na 1 */
+  visibility: visible; /* Sekcje muszą być widoczne */
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
-
-  &.animate {
-    visibility: visible;
-  }
 
   @media (max-width: 375px) {
     width: 90%;
@@ -262,6 +258,7 @@ const Footer = styled.footer`
   @media (max-width: 400px) {
     font-size: 8px;
     padding: 5px;
+    margin-bottom:40px;
   }
 `;
 
