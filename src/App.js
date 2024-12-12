@@ -131,7 +131,7 @@ const CompanyText = styled.span`
 
 const Section = styled.div`
   background-color: #ffffff; /* Domyślne solidne białe tło */
-  background: rgba(255, 255, 255, 0.8); /* Przezroczyste białe tło */
+  background: rgba(255, 255, 255, 0.4); /* Przezroczyste białe tło */
   padding: 20px;
   border-radius: 10px;
   width: 80%;
@@ -142,6 +142,7 @@ const Section = styled.div`
   animation-fill-mode: forwards;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  
 
   /* Fallback for unsupported rgba */
   @supports not (background: rgba(255, 255, 255, 0.8)) {
@@ -172,6 +173,7 @@ const SubTitle = styled.h2`
   color: #0078d4;
   margin: 0px;
   margin-bottom:10px;
+  font-weight:bold;
 
   @media (max-width: 480px) {
     font-size: 1em;
@@ -184,6 +186,7 @@ const StyledList = styled.div`
   padding: 0;
   margin: 0;
   margin-top:15px;
+  font-weight:bold;
 `;
 
 const StyledListItem = styled.div`
@@ -191,6 +194,7 @@ const StyledListItem = styled.div`
   padding-left: 1.5em; /* Space for the dot */
   margin-bottom: 0.8em;
   font-size:0.8em;
+  font-weight:bold;
  
 
   &::before {
@@ -206,7 +210,7 @@ const StyledListItem = styled.div`
 const Text = styled.p`
   font-size: 1em;
   color: #333;
-
+font-weight: bold;
   @media (max-width: 480px) {
     font-size: 0.7em;
   }
@@ -215,6 +219,7 @@ const Text = styled.p`
 const ContactItem = styled.p`
   font-size: 1em;
   color: #333;
+  font-weight: bold;
 
   @media (max-width: 480px) {
     font-size: 0.7em;
