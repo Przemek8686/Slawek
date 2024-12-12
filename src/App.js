@@ -35,7 +35,7 @@ const BackgroundVideo = styled.video`
   height: calc(100vh - 6px); /* Dopasowanie wysokości uwzględniające stopkę */
   object-fit: cover;
   z-index: -1;
-`;
+  `;
 
 const Title = styled.h1`
   display: flex;
@@ -258,7 +258,6 @@ const Footer = styled.footer`
   @media (max-width: 400px) {
     font-size: 8px;
     padding: 5px;
-    margin-bottom:40px;
   }
 `;
 
