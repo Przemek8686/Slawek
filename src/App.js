@@ -125,7 +125,7 @@ const CompanyText = styled.span`
 
 
 const Section = styled.div`
-  background: rgba(255, 255, 255, 0.8); /* Białe tło o przezroczystości 80% */
+  background-color: rgba(255, 255, 255, 0.8); /* Stały biały kolor tła */
   padding: 20px;
   border-radius: 10px;
   width: 80%;
@@ -134,13 +134,15 @@ const Section = styled.div`
   margin-bottom: 20px;
   animation: ${slideInFromLeft} 1.5s ease-out;
   animation-fill-mode: forwards;
-  opacity: 0;
-  visibility: hidden;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
 
+  visibility: visible; /* Ustawiamy jako domyślnie widoczne */
+  opacity: 1; /* Pełna widoczność, brak przejrzystości */
+
   &.animate {
-    visibility: visible;
+    visibility: visible; /* Zapewnienie, że sekcja będzie widoczna */
+    opacity: 1;
   }
 
   @media (max-width: 375px) {
@@ -153,13 +155,13 @@ const Section = styled.div`
 const Section1 = styled(Section)`
   margin-top: 2px;
   animation-delay: 0.5s;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);  // Cień po prawej i w prawym dolnym rogu
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); /* Cień po prawej stronie */
 `;
 
 const Section1Delayed = styled(Section)`
   margin-top: 1px;
   animation-delay: 1s;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);  // Cień po prawej i w prawym dolnym rogu
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); /* Cień po prawej stronie */
 `;
 
 const SubTitle = styled.h2`
