@@ -155,6 +155,8 @@ const Section = styled.div`
     width: 90%;
     padding: 15px;
     margin-top: 110px;
+    @supports not (background: rgba(255, 255, 255, 0.8)) {
+    background-color: #ffffff; /* Solidne białe tło */
   }
 `;
 const Section1 = styled(Section)`
@@ -258,19 +260,26 @@ const Footer = styled.footer`
   text-align: center;
   padding: 10px;
   width: 100%;
-  position: absolute;
+  position: fixed; /* Zamiast absolute, aby zawsze było widoczne */
   bottom: 0;
   z-index: 1; /* Ustawienie z-index, aby był nad tłem wideo */
   font-size: 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3), 0px -2px 4px rgba(0, 0, 0, 0.2);
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
 
-  @media (max-width: 400px) {
+  @media (max-width: 768px) {
     font-size: 8px;
+    padding: 8px;
+    bottom: 5px; /* Dostosowanie odległości od dołu */
+  }
+
+  @media (max-width: 400px) {
+    font-size: 7px;
     padding: 5px;
-    margin-bottom:40px;
+    bottom: 10px; /* Jeszcze wyżej na bardzo małych ekranach */
   }
 `;
+
 
 function App() {
   return (
