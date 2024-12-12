@@ -4,6 +4,11 @@ import styled, { keyframes } from "styled-components";
 import backgroundVideo from './public/Image/Tlo.mp4';
 import companyLogo from './public/Image/Logo.png';
 
+
+
+
+
+
 // Animacja przesunięcia z lewej strony
 const slideInFromLeft = keyframes`
   from {
@@ -125,7 +130,8 @@ const CompanyText = styled.span`
 
 
 const Section = styled.div`
-  background-color: rgba(255, 255, 255, 0.8); /* Stały biały kolor tła */
+  background: rgba(255, 255, 255, 0.8); /* Przezroczyste białe tło */
+  background-color: #ffffff; /* Fallback na solidne białe tło */
   padding: 20px;
   border-radius: 10px;
   width: 80%;
@@ -137,11 +143,12 @@ const Section = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
 
-  visibility: visible; /* Ustawiamy jako domyślnie widoczne */
-  opacity: 1; /* Pełna widoczność, brak przejrzystości */
+  @supports not (background: rgba(255, 255, 255, 0.8)) {
+    background-color: #ffffff; /* Solidne białe tło */
+  }
 
   &.animate {
-    visibility: visible; /* Zapewnienie, że sekcja będzie widoczna */
+    visibility: visible;
     opacity: 1;
   }
 
@@ -151,7 +158,6 @@ const Section = styled.div`
     margin-top: 110px;
   }
 `;
-
 const Section1 = styled(Section)`
   margin-top: 2px;
   animation-delay: 0.5s;
