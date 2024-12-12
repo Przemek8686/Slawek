@@ -130,8 +130,7 @@ const CompanyText = styled.span`
 
 
 const Section = styled.div`
-  background-color: rgba(255, 255, 255, 0.8); /* Przezroczyste białe tło */
-  
+  background: rgba(255, 255, 255, 0.8); /* Przezroczyste białe tło */
   padding: 20px;
   border-radius: 10px;
   width: 80%;
