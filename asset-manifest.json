@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Slawek/static/css/main.e6c13ad2.css",
-    "main.js": "/Slawek/static/js/main.09a4f919.js",
+    "main.js": "/Slawek/static/js/main.54852914.js",
     "static/js/453.ed3810f9.chunk.js": "/Slawek/static/js/453.ed3810f9.chunk.js",
     "static/media/Tlo.mp4": "/Slawek/static/media/Tlo.07776f1e905c9ab4040f.mp4",
     "static/media/Logo.png": "/Slawek/static/media/Logo.c4d8ace6827f0f05b22f.png",
     "index.html": "/Slawek/index.html",
     "main.e6c13ad2.css.map": "/Slawek/static/css/main.e6c13ad2.css.map",
-    "main.09a4f919.js.map": "/Slawek/static/js/main.09a4f919.js.map",
+    "main.54852914.js.map": "/Slawek/static/js/main.54852914.js.map",
     "453.ed3810f9.chunk.js.map": "/Slawek/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.09a4f919.js"
+    "static/js/main.54852914.js"
   ]
 }
