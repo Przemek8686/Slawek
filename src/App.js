@@ -324,7 +324,7 @@ function App() {
             Telefoonnummer: <PhoneLink href="tel:+31611434308">+31(0)611434308</PhoneLink>
           </ContactItem>
           <ContactItem>
-            Email: <EmailLink href="mailto:Bouwmax@outlook.com">Bouwmax@outlook.com</EmailLink>
+            Email: <EmailLink href="mailto:bouwmax@outlook.com">bouwmax@outlook.com</EmailLink>
           </ContactItem>
           <ContactItem>KvK: 92009956</ContactItem>
         </Section1Delayed>
