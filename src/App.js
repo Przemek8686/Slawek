@@ -259,7 +259,7 @@ const Footer = styled.footer`
   background: linear-gradient(177deg, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 35%, rgba(0,212,255,1) 100%);
   color: #fff;
   text-align: center;
-  padding: 10px;
+  padding: 2px;
   width: 100%;
   position: fixed; /* Zamiast absolute, aby zawsze było widoczne */
   bottom: 0;
@@ -320,6 +320,7 @@ function App() {
         <Section1Delayed className="animate">
           <SubTitle>Contactgegevens</SubTitle>
           <ContactItem>SC Bouwmax</ContactItem>
+          <ContactItem>Slawomir Cieciora</ContactItem>
           <ContactItem>
             Telefoonnummer: <PhoneLink href="tel:+31611434308">+31(0)611434308</PhoneLink>
           </ContactItem>
