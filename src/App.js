@@ -294,7 +294,7 @@ function App() {
         <Title>
           <Logo src={companyLogo} alt="Company Logo" />
           <CompanyName>SC Bouwmax</CompanyName>
-          <CompanyText>Kunstof Kozijn gemonteerd met precisie - comfort voor jaren!</CompanyText>
+          <CompanyText>Kunststof Kozijnen gemonteerd met precisie - comfort voor jaren!</CompanyText>
         </Title>
         <Section className="animate">
           <SubTitle>Over het Bedrijf</SubTitle>
