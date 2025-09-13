@@ -127,10 +127,41 @@ const Section = styled.div`
   animation-fill-mode: forwards;
   box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
 
-  @media (max-width: 1024px) { width: 90%; padding: 15px; margin-top: 10px; }
-  @media (max-width: 768px)  { width: 95%; padding: 12px; margin-top: 15px; }
-  @media (max-width: 480px)  { width: 95%; padding: 10px; margin-top: 54px; margin-bottom: 40px; }
+  @media (max-width: 1024px) { 
+    width: 90%; 
+    padding: 15px; 
+    margin-top: 10px; 
+  }
+
+  @media (max-width: 768px)  { 
+    width: 95%; 
+    padding: 12px; 
+    margin-top: 15px; 
+  }
+
+  @media (max-width: 480px)  { 
+    width: 95%; 
+    padding: 10px; 
+    margin-top: 6px; 
+    margin-bottom: 5px; 
+  }
+
+  @media (max-width: 375px)  { 
+    width: 92%; 
+    padding: 8px; 
+    margin-top: 6px; 
+    margin-bottom: 5px; 
+
+    h2 {
+      font-size: 1.1em; /* mniejsze nagłówki */
+    }
+
+    p, li {
+      font-size: 0.9em; /* mniejszy tekst w paragrafach i listach */
+    }
+  }
 `;
+
 
 const Section1 = styled(Section)` margin-top: 2px; animation-delay: 0.5s; `;
 const Section1Delayed = styled(Section)` margin-top: 1px; animation-delay: 1s; `;
