@@ -219,10 +219,28 @@ const GalleryContainer = styled.div`
   margin-bottom: 60px;
   padding: 20px;
 
+  /* Styl dla dzieci (kafelek) */
+  & > * {
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Delikatne obramowanie */
+    border-radius: 8px; /* Zaokrąglone rogi */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Delikatny cień */
+    transition: all 0.3s ease; /* Płynna animacja */
+    
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Nieco większy cień przy najechaniu */
+      transform: translateY(-2px); /* Delikatne uniesienie przy najechaniu */
+    }
+  }
+
   @media (max-width: 1024px) {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 12px;
     padding: 18px;
+    
+    & > * {
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
   }
 
   @media (max-width: 768px) {
@@ -230,6 +248,11 @@ const GalleryContainer = styled.div`
     gap: 10px;
     padding: 15px;
     margin-top: 15px;
+    
+    & > * {
+      border-radius: 5px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
   }
 
   @media (max-width: 480px) {
@@ -237,6 +260,12 @@ const GalleryContainer = styled.div`
     gap: 8px;
     padding: 10px;
     margin-top: 10px;
+    
+    & > * {
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      border-width: 0.5px;
+    }
   }
 `;
 
@@ -330,18 +359,10 @@ const Footer = styled.footer`
 
 // ================= Sample Images =================
 const sampleImages = [
-  { id: 1, src: "/przyklad.jpg", alt: "Project 1" },
-  { id: 2, src: "/przyklad.jpg", alt: "Project 2" },
-  { id: 3, src: "/przyklad.jpg", alt: "Project 3" },
-  { id: 4, src: "/przyklad.jpg", alt: "Project 4" },
-  { id: 5, src: "/przyklad.jpg", alt: "Project 5" },
-  { id: 6, src: "/przyklad.jpg", alt: "Project 6" },
-  { id: 7, src: "/przyklad.jpg", alt: "Project 7" },
-  { id: 8, src: "/przyklad.jpg", alt: "Project 8" },
-  { id: 9, src: "/przyklad.jpg", alt: "Project 9" },
-  { id: 10, src: "/przyklad.jpg", alt: "Project 10" },
-  { id: 11, src: "/przyklad.jpg", alt: "Project 11" },
-  { id: 12, src: "/przyklad.jpg", alt: "Project 12" },
+  { id: 1, src: "/zdjecie1.jpeg", alt: "Project 1" },
+  { id: 2, src: "/zdjecie2.jpeg", alt: "Project 2" },
+  { id: 3, src: "/zdjecie3.jpeg", alt: "Project 3" },
+ 
 ];
 
 // ================= APP =================
